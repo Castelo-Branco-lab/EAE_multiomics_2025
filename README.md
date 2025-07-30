@@ -30,6 +30,15 @@ A total of 7 batches were collected from the sequencing facility. Fastq files fr
 
 **bulk_atac_rna.Rmd** : R markdown to find differentially expressed genes and accessible genes from primary OPC cell culture with and without interferon-γ treatment
 
+**singularity_recipe** : A text file use by singularity to build an image to run a jupyter notebook inside a containerize environment
+
+## Singularity setup
+
+```
+sudo singularity build singularity_multiomics.img singularity_recipe.def > output_singularity_multiomics.txt 2>&1
+singularity exec singularity_multiomics.img jupyter lab --no-browser --notebook-dir=/home/username/Notebooks --port 6666
+```
+
 ## Visualization
 
 All plots from the manuscript are displayed in the notebooks.
